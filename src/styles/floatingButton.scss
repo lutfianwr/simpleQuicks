@@ -1,0 +1,132 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f1f1f1;
+}
+
+.container-floating {
+  .nds {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 300;
+    cursor: pointer;
+    color: #000;
+  }
+  button {
+    border: none;
+  }
+  #floating-button {
+    z-index: 350;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: #2f80ed;
+    position: fixed;
+    bottom: 27px;
+    right: 34px;
+    cursor: pointer;
+    transition: 100ms;
+  }
+  #floating-button.hidden {
+    background: #4f4f4f;
+    right: 49px;
+    z-index: 150;
+    transition: 100ms;
+  }
+
+  .todo {
+    background: white;
+    color: #2f80ed;
+    right: 214px;
+    bottom: 31px;
+    animation-delay: 0.15s;
+    animation: bounce-out-nds 0.15s linear;
+    animation-fill-mode: forwards;
+    svg {
+      fill: #f8b76b;
+    }
+  }
+
+  .todo.active {
+    right: 34px;
+    width: 68px;
+    height: 68px;
+    bottom: 28px;
+    background-color: #f8b76b;
+    animation: bounce-nds 0.1s linear;
+    animation-fill-mode: forwards;
+    svg {
+      fill: white;
+    }
+  }
+  .todo.hidden {
+    visibility: hidden;
+  }
+  .message {
+    background: white;
+    color: #000;
+    right: 128px;
+    bottom: 31px;
+    animation-delay: 0.15s;
+    animation: bounce-out-nds 0.15s linear;
+    animation-fill-mode: forwards;
+    svg {
+      fill: #8785ff;
+    }
+  }
+  .message.active {
+    background-color: #8785ff;
+    right: 34px;
+    width: 68px;
+    height: 68px;
+    bottom: 28px;
+    animation: bounce-nds 0.1s linear;
+    animation-fill-mode: forwards;
+    svg {
+      fill: white;
+    }
+  }
+  .message.hidden {
+    visibility: hidden;
+  }
+}
+
+.expanded .nds {
+  animation: bounce-nds 0.1s linear;
+  animation-fill-mode: forwards;
+}
+
+#container-floating {
+  position: fixed;
+  width: 68px;
+  height: 68px;
+  bottom: 28px;
+  right: 30px;
+  z-index: 50px;
+}
+
+#container-floating:hover {
+  height: 70px;
+  width: 250px;
+}
+
+@keyframes bounce-nds {
+  from {
+    opacity: 0;
+    right: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-out-nds {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    right: 0;
+  }
+}
