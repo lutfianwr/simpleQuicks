@@ -19,6 +19,9 @@ const FloatingButton = () => {
     if (event.currentTarget.classList.contains("hidden")) {
       event.currentTarget.classList.remove("hidden");
     }
+
+    var modal = document.getElementById("modal");
+    modal.style.display = "none";
   };
 
   const handleMessage = (event) => {
@@ -36,6 +39,12 @@ const FloatingButton = () => {
     reveals.classList.remove("expanded");
 
     document.getElementById("floating-button").classList.add("hidden");
+    handleToggleTodo();
+  };
+
+  const handleToggleTodo = () => {
+    var modal = document.getElementById("modal");
+    modal.style.display = "block";
   };
 
   return (
