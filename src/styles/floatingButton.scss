@@ -114,7 +114,7 @@ body {
 @keyframes bounce-nds {
   from {
     opacity: 0;
-    right: 0;
+    right: 34px;
   }
   to {
     opacity: 1;
@@ -122,11 +122,14 @@ body {
 }
 
 @keyframes bounce-out-nds {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  90% {
+    right: 34px;
+  }
+  100% {
     opacity: 0;
-    right: 0;
+    right: -100px;
   }
 }

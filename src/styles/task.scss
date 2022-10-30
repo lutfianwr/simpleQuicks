@@ -6,29 +6,54 @@
   .left {
     .title {
       width: 335px;
-      padding-left: 25px;
+      margin-left: 25px;
+    }
+    input {
+      cursor: pointer;
     }
   }
   .right {
+    position: relative;
     button {
       background-color: white;
       border: none;
+      cursor: pointer;
     }
-    .expanded::before {
+    button.delete {
+      display: none;
+      color: #eb5757;
+      border-color: #828282;
+      border-style: solid;
+      border-radius: 5px;
+      width: 126px;
+      height: 43px;
+      position: absolute;
+      right: 10px;
+      top: 40px;
+      z-index: 20;
+      text-align: start;
+      border-width: 1px;
+    }
+    #delete:hover {
+      cursor: pointer;
+    }
+    #delete.expanded {
+      display: block;
+    }
+    .exp.expanded::before {
       content: "↑";
       background: white;
       transform: rotate(90deg);
     }
-    button::before {
+    button.exp::before {
       content: "↓";
       background: white;
     }
-
     .date_remain {
       color: #eb5757;
     }
     p {
-      padding-right: 15px;
+      padding: 0 10px 0 10px;
     }
   }
 }
@@ -46,14 +71,15 @@
       height: 0;
       display: flex;
       align-items: center;
-
+      margin-bottom: 10px;
       input {
         width: 193px;
         height: 40px;
-        border-radius: 5px;
+        font-size: large;
+        // border-radius: 5px;
       }
       svg {
-        padding: 0 19.67px 0 40px;
+        padding: 0 18px 0 40px;
       }
     }
     .detail {
@@ -62,6 +88,9 @@
       p {
         width: 518.24px;
       }
+      textarea {
+        width: 500px;
+      }
     }
   }
 }
@@ -69,13 +98,14 @@
 .task_detail.active {
   animation: rolldown;
   animation-fill-mode: forwards;
-
+  #submit {
+    margin: 10px 0 10px 75px;
+  }
   .date {
     height: 100%;
   }
   .detail {
     height: 100%;
-
     svg {
       padding: 16.33px 19.67px 0 40px;
     }
@@ -119,4 +149,8 @@
     opacity: 0;
     transform: translate(0, 5%);
   }
+}
+
+#task_form {
+  display: none;
 }

@@ -13,12 +13,17 @@
     border-radius: 5px;
     position: absolute;
     background-color: white;
-    height: 737px;
+    // height: 737px;
+    height: 526.43px;
     width: 734px;
     // left: 867px;
     // top: 175px;
     bottom: 110px;
     right: 34px;
+    button,
+    select {
+      cursor: pointer;
+    }
     .task_header {
       display: flex;
       justify-content: space-between;

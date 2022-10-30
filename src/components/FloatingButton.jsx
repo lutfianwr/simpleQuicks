@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/floatingButton.scss";
 
-const FloatingButton = () => {
+const FloatingButton = (props) => {
   const handleExpand = (event) => {
     //toggle expand saat visible
     let reveals = document.getElementById("container-floating");
@@ -40,6 +40,7 @@ const FloatingButton = () => {
 
     document.getElementById("floating-button").classList.add("hidden");
     handleToggleTodo();
+    props.getData();
   };
 
   const handleToggleTodo = () => {
