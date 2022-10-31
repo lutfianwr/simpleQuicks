@@ -16,32 +16,44 @@ const FloatingButton = (props) => {
     if (event.currentTarget.classList.contains("hidden")) {
       event.currentTarget.classList.remove("hidden");
     }
+    document.getElementById("message_button").classList.remove("hidden");
+    document.getElementById("task_button").classList.remove("hidden");
 
-    var modal = document.getElementById("modal");
+    var modal = document.getElementById("task_modal");
     modal.style.display = "none";
   };
 
   const handleMessage = (event) => {
     event.currentTarget.classList.add("active");
-    let reveals = document.getElementById("container-floating");
-    reveals.classList.remove("expanded");
+    event.currentTarget.classList.remove("hidden");
 
-    let exp = document.getElementById("floating-button");
-    exp.classList.add("hidden");
-  };
-
-  const handleTodo = (event) => {
-    event.currentTarget.classList.add("active");
     let reveals = document.getElementById("container-floating");
     reveals.classList.remove("expanded");
 
     document.getElementById("floating-button").classList.add("hidden");
+    document.getElementById("task_button").classList.add("hidden");
+    document.getElementById("task_button").classList.remove("active");
+
+    var modal = document.getElementById("task_modal");
+    modal.style.display = "none";
+  };
+
+  const handleTodo = (event) => {
+    event.currentTarget.classList.add("active");
+    event.currentTarget.classList.remove("hidden");
+    let reveals = document.getElementById("container-floating");
+    reveals.classList.remove("expanded");
+
+    document.getElementById("floating-button").classList.add("hidden");
+    document.getElementById("message_button").classList.add("hidden");
+    document.getElementById("message_button").classList.remove("active");
+
     handleToggleTodo();
     props.getData();
   };
 
   const handleToggleTodo = () => {
-    var modal = document.getElementById("modal");
+    var modal = document.getElementById("task_modal");
     modal.style.display = "block";
   };
 
@@ -61,7 +73,11 @@ const FloatingButton = (props) => {
         </svg>
       </button>
 
-      <button className={`nds todo`} onClick={(event) => handleTodo(event)}>
+      <button
+        id="task_button"
+        className={`nds todo`}
+        onClick={(event) => handleTodo(event)}
+      >
         <svg
           width="26"
           height="20"
@@ -73,6 +89,7 @@ const FloatingButton = (props) => {
       </button>
 
       <button
+        id="message_button"
         className={`nds message`}
         onClick={(event) => handleMessage(event)}
       >

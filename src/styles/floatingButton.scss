@@ -56,7 +56,8 @@
     }
   }
   .todo.hidden {
-    visibility: hidden;
+    animation: bounce-side 0.1s linear;
+    animation-fill-mode: forwards;
   }
   .message {
     background: white;
@@ -83,7 +84,8 @@
     }
   }
   .message.hidden {
-    visibility: hidden;
+    animation: bounce-side 0.1s linear;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -126,5 +128,16 @@
   100% {
     opacity: 0;
     right: -100px;
+  }
+}
+
+@keyframes bounce-side {
+  0% {
+    opacity: 1;
+    right: 34px;
+  }
+  100% {
+    opacity: 1;
+    right: 133px;
   }
 }

@@ -11,7 +11,7 @@ const Modal = (props) => {
   };
 
   return (
-    <div id="modal" className="modal">
+    <div id="task_modal" className="modal">
       <div className="modal_content">
         <div className="task_header">
           <select type="select">

@@ -9,6 +9,7 @@ const Task = (props) => {
 
   const handleExpand = () => {
     active ? setActive(false) : setActive(true);
+    setDeleteActive(false);
   };
   const handleExpandDelete = () => {
     deleteActive ? setDeleteActive(false) : setDeleteActive(true);

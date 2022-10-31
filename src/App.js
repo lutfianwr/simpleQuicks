@@ -5,7 +5,7 @@ import Modal from "./components/TaskModal";
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [dataurut, setDataurut] = useState([]);
+  const [sortedData, setSortedData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const App = () => {
         return 0;
       }
     });
-    setDataurut(sortedData);
+    setSortedData(sortedData);
     setLoading(false);
   };
 
