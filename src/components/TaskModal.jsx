@@ -27,7 +27,6 @@ const Modal = (props) => {
         </div>
         <TaskForm getData={props.getData}></TaskForm>
         <div className="task_content">
-          {/* {props.data.length === 0 ? ( */}
           {props.loading ? (
             <Loading tag="Loading Task List..." />
           ) : (

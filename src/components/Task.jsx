@@ -12,10 +12,6 @@ const Task = (props) => {
   };
   const handleExpandDelete = () => {
     deleteActive ? setDeleteActive(false) : setDeleteActive(true);
-
-    // let deleteBtn = document.getElementById("delete");
-    // console.log(deleteBtn);
-    // deleteBtn.classList.toggle("expanded");
   };
 
   const handleComplete = () => {
@@ -26,7 +22,7 @@ const Task = (props) => {
     fetch(`https://api.todoist.com/rest/v1/tasks/${props.id}`, {
       method: "delete",
       headers: {
-        Authorization: `Bearer 8845c7d100a662743d705c1c0aaf4150bb1a226d`,
+        Authorization: `Bearer ${process.env.REACT_APP_MY_API_KEY}`,
         "Content-Type": "application/json",
       },
     }).then(() => props.getData());

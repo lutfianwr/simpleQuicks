@@ -3,19 +3,16 @@ import "../styles/floatingButton.scss";
 
 const FloatingButton = (props) => {
   const handleExpand = (event) => {
-    //toggle expand saat visible
     let reveals = document.getElementById("container-floating");
     reveals.classList.contains("expanded")
       ? reveals.classList.remove("expanded")
       : reveals.classList.add("expanded");
 
-    //hide message & todo button saat hidden
     let nd = document.querySelectorAll(".nds");
     for (let i = 0; i < nd.length; i++) {
       nd[i].classList.remove("active");
     }
 
-    //jika expander hidden, maka hapus hidden,bisa expand. saat hidden
     if (event.currentTarget.classList.contains("hidden")) {
       event.currentTarget.classList.remove("hidden");
     }

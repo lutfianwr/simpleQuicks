@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cover from "./components/Cover";
 import FloatingButton from "./components/FloatingButton";
 import Modal from "./components/TaskModal";
 
@@ -15,7 +16,7 @@ const App = () => {
     setLoading(true);
     await fetch(`https://api.todoist.com/rest/v1/tasks`, {
       headers: {
-        Authorization: `Bearer 8845c7d100a662743d705c1c0aaf4150bb1a226d`,
+        Authorization: `Bearer ${process.env.REACT_APP_MY_API_KEY}`,
       },
     })
       .then((response) => response.json())
@@ -39,6 +40,7 @@ const App = () => {
 
   return (
     <div>
+      <Cover></Cover>
       <Modal data={data} loading={loading} getData={() => fetchData()} />
       <FloatingButton getData={() => fetchData()} />
     </div>

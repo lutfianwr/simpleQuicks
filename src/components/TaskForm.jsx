@@ -35,7 +35,7 @@ const TaskForm = (props) => {
       fetch(`https://api.todoist.com/rest/v1/tasks`, {
         method: "post",
         headers: {
-          Authorization: `Bearer 8845c7d100a662743d705c1c0aaf4150bb1a226d`,
+          Authorization: `Bearer ${process.env.REACT_APP_MY_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -150,7 +150,7 @@ const TaskForm = (props) => {
               }}
             ></textarea>
           </div>
-          <button id="submit" type="submit">
+          <button id="submit" type="submit" disabled={date == ""}>
             submit
           </button>
         </div>
